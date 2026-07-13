@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bad Karl — Funk &amp; Soul Covers</title>
+  <meta name="description" content="Bad Karl is a funk and soul cover band. Book us for your bar, wedding, or party — we bring the groove." />
+
+  <!-- Open Graph / social share preview -->
+  <meta property="og:title" content="Bad Karl" />
+  <meta property="og:description" content="Funk &amp; soul covers. Book us for your next party." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seanlima3.github.io/Bad-Karl-Website/" />
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <meta name="theme-color" content="#f6eedf" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Bump ?v= whenever styles/scripts change so visitors never see stale versions -->
+  <link rel="stylesheet" href="css/styles.css?v=1" />
+</head>
+<body>
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <a href="#top" class="nav__logo">Bad Karl</a>
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#shows">Shows</a>
+      <a href="#songbook">Songbook</a>
+      <a href="#photos">Photos</a>
+    </nav>
+    <a href="#book" class="nav__book">Book us</a>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="top" class="hero">
+    <div class="hero__arcs" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Funk &amp; soul covers</p>
+      <h1 class="hero__title">Bad Karl</h1>
+      <p class="hero__tagline">The songs you love, the groove you didn't know you needed.</p>
+      <div class="hero__cta">
+        <a href="#book" class="btn btn--primary">Book us</a>
+        <a href="#shows" class="btn btn--ghost">Upcoming shows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section">
+    <div class="section__inner">
+      <h2 class="section__title">About</h2>
+      <!-- PLACEHOLDER BIO: rewrite this in your own words -->
+      <p class="about__text">
+        Bad Karl is a funk and soul cover band that turns any room into a dance floor.
+        From Motown classics to modern funk, we play the songs everybody knows —
+        tight horns, deep pockets, and zero excuses not to move. Bars, weddings,
+        parties: if it has a floor, we can fill it.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== SHOWS ===================== -->
+  <section id="shows" class="section section--alt">
+    <div class="section__inner">
+      <h2 class="section__title">Upcoming shows</h2>
+      <p class="section__lead">Come dance with us.</p>
+
+      <!-- Shows are rendered from js/shows.js — edit that file to add/remove dates -->
+      <ul id="shows-list" class="shows"></ul>
+      <p id="shows-empty" class="shows__empty" hidden>Nothing on the calendar right now — check back soon.</p>
+    </div>
+  </section>
+
+  <!-- ===================== SONGBOOK ===================== -->
+  <section id="songbook" class="section">
+    <div class="section__inner">
+      <h2 class="section__title">The songbook</h2>
+      <p class="section__lead">A taste of who we cover.</p>
+
+      <!-- PLACEHOLDER ARTISTS: edit freely -->
+      <ul class="songbook">
+        <li>Stevie Wonder</li>
+        <li>James Brown</li>
+        <li>Earth, Wind &amp; Fire</li>
+        <li>Aretha Franklin</li>
+        <li>Marvin Gaye</li>
+        <li>Kool &amp; The Gang</li>
+        <li>Chaka Khan</li>
+        <li>Al Green</li>
+        <li>Bruno Mars</li>
+        <li>Vulfpeck</li>
+        <li>Amy Winehouse</li>
+        <li>Anderson .Paak</li>
+      </ul>
+      <p class="section__note">…and about forty more. Ask for the full list when you book.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PHOTOS ===================== -->
+  <section id="photos" class="section section--alt">
+    <div class="section__inner">
+      <h2 class="section__title">Photos</h2>
+      <p class="section__lead">Professional shots coming soon — catch us live in the meantime.</p>
+
+      <!-- Drop real images in /images and swap these placeholders -->
+      <div class="gallery">
+        <figure class="gallery__item gallery__placeholder"><span>Photo soon</span></figure>
+        <figure class="gallery__item gallery__placeholder"><span>Photo soon</span></figure>
+        <figure class="gallery__item gallery__placeholder"><span>Photo soon</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BOOK US ===================== -->
+  <section id="book" class="book">
+    <div class="section__inner book__inner">
+      <h2 class="book__title">Let's get funky at your place</h2>
+      <p class="book__lead">Bars, weddings, birthdays, corporate parties — tell us the date and we'll bring the groove.</p>
+      <!-- PLACEHOLDER EMAIL: swap for the real Bad Karl address -->
+      <a class="btn btn--book" href="mailto:BOOKING-EMAIL-HERE@gmail.com">Email the band</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Bad Karl. Stay funky.</p>
+  </footer>
+
+  <script src="js/shows.js?v=1"></script>
+  <script src="js/main.js?v=1"></script>
+</body>
+</html>

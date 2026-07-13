@@ -1,0 +1,304 @@
+/* ============================================================
+   Bad Karl — retro funk palette, modern execution
+   ============================================================ */
+
+:root {
+  --cream:      #f6eedf;
+  --cream-deep: #efe1c8;
+  --ink:        #2b1a0e;   /* deep coffee brown */
+  --ink-soft:   #6b543f;
+  --orange:     #d2591c;   /* burnt orange */
+  --orange-hot: #e8681f;
+  --mustard:    #e5a52e;
+  --teal:       #256d5b;   /* the modern pop */
+  --max:        1020px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, .nav__logo {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  line-height: 1.02;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- NAV ---------- */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.85rem clamp(1rem, 4vw, 2.5rem);
+  background: rgba(246, 238, 223, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 3px solid var(--ink);
+}
+.nav__logo { font-size: 1.5rem; color: var(--orange); }
+.nav__links { display: flex; gap: clamp(0.9rem, 2.5vw, 1.8rem); margin-left: auto; }
+.nav__links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: color 0.2s;
+}
+.nav__links a:hover { color: var(--orange); }
+.nav__book {
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav__book:hover { background: var(--orange); transform: translateY(-1px); }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem 1.5rem 5rem;
+  overflow: hidden;
+}
+/* 70s sunset arcs rising behind the title */
+.hero__arcs {
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translate(-50%, 74%);
+  width: min(110vw, 1300px);
+  height: min(55vw, 650px);
+  background: radial-gradient(ellipse at 50% 100%,
+    transparent 0 40%,
+    var(--mustard) 40% 52%,
+    transparent 52% 56%,
+    var(--orange) 56% 68%,
+    transparent 68% 72%,
+    var(--teal) 72% 84%,
+    transparent 84%);
+  pointer-events: none;
+}
+.hero__content { position: relative; z-index: 2; max-width: 760px; padding-bottom: 12vw; }
+.hero__eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream);
+  background: var(--teal);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+}
+.hero__title {
+  font-size: clamp(4.5rem, 15vw, 10.5rem);
+  color: var(--ink);
+}
+.hero__title::first-letter { color: var(--orange); }
+.hero__tagline {
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  color: var(--ink-soft);
+  margin: 1.2rem auto 0;
+  max-width: 34ch;
+}
+.hero__cta {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 3px solid var(--ink);
+  transition: transform 0.15s, background 0.2s, color 0.2s, box-shadow 0.15s;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--ink); }
+.btn--primary { background: var(--orange); color: var(--cream); }
+.btn--primary:hover { background: var(--orange-hot); }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--cream-deep); }
+.btn--book {
+  background: var(--cream);
+  color: var(--ink);
+  border-color: var(--cream);
+  font-size: 1rem;
+}
+.btn--book:hover { box-shadow: 4px 4px 0 var(--mustard); }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: clamp(3.5rem, 9vw, 6rem) clamp(1rem, 4vw, 2.5rem); }
+.section--alt { background: var(--cream-deep); }
+.section__inner { max-width: var(--max); margin: 0 auto; }
+.section__title {
+  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+  color: var(--ink);
+  position: relative;
+  display: inline-block;
+}
+.section__title::after {
+  content: "";
+  display: block;
+  width: 56px; height: 5px;
+  background: var(--orange);
+  border-radius: 999px;
+  margin-top: 0.5rem;
+}
+.section__lead { color: var(--ink-soft); font-size: 1.05rem; margin: 0.7rem 0 2.2rem; }
+.section__note { color: var(--ink-soft); font-size: 0.92rem; margin-top: 1.4rem; font-style: italic; }
+
+/* ---------- ABOUT ---------- */
+.about__text {
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  line-height: 1.7;
+  max-width: 56ch;
+  margin-top: 1.4rem;
+}
+
+/* ---------- SHOWS ---------- */
+.shows { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+.show {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.2rem 1.5rem;
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.show:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--mustard); }
+.show__date { text-align: center; min-width: 64px; }
+.show__month { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--orange); font-weight: 600; }
+.show__day { display: block; font-family: "Fraunces", serif; font-weight: 900; font-size: 2.1rem; line-height: 1; }
+.show__year { display: block; font-size: 0.72rem; color: var(--ink-soft); }
+.show__info { min-width: 0; }
+.show__venue { font-size: 1.12rem; font-weight: 600; }
+.show__city { color: var(--ink-soft); font-size: 0.92rem; }
+.show__cta { white-space: nowrap; }
+.show__tickets {
+  font-size: 0.78rem; font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  border: 2.5px solid var(--teal); border-radius: 999px;
+  color: var(--teal);
+  transition: background 0.2s, color 0.2s;
+}
+.show__tickets:hover { background: var(--teal); color: var(--cream); }
+.show__soldout { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); }
+.shows__empty { color: var(--ink-soft); font-style: italic; padding: 1rem 0; }
+
+/* ---------- SONGBOOK ---------- */
+.songbook {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.songbook li {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.55rem 1.3rem;
+  border: 2.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--cream);
+  transition: transform 0.15s, background 0.2s, color 0.2s;
+}
+.songbook li:nth-child(3n+1):hover { background: var(--orange); color: var(--cream); transform: rotate(-2deg); }
+.songbook li:nth-child(3n+2):hover { background: var(--teal); color: var(--cream); transform: rotate(2deg); }
+.songbook li:nth-child(3n):hover { background: var(--mustard); color: var(--ink); transform: rotate(-2deg); }
+
+/* ---------- PHOTOS ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.gallery__item { overflow: hidden; border: 3px solid var(--ink); border-radius: 16px; }
+.gallery__item img {
+  width: 100%; height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+.gallery__placeholder {
+  aspect-ratio: 3 / 2;
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(-45deg, var(--cream) 0 18px, var(--cream-deep) 18px 36px);
+}
+.gallery__placeholder span {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--cream);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid var(--ink-soft);
+}
+
+/* ---------- BOOK US ---------- */
+.book {
+  background: var(--orange);
+  color: var(--cream);
+  padding: clamp(4rem, 10vw, 6.5rem) clamp(1rem, 4vw, 2.5rem);
+  text-align: center;
+}
+.book__title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.05;
+}
+.book__lead {
+  margin: 1rem auto 2.2rem;
+  max-width: 46ch;
+  font-size: 1.05rem;
+  color: rgba(246, 238, 223, 0.9);
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  text-align: center;
+  padding: 2.2rem 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  background: var(--cream);
+  border-top: 3px solid var(--ink);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 680px) {
+  .nav { flex-wrap: wrap; gap: 0.6rem 1rem; padding: 0.7rem 1rem; }
+  .nav__logo { font-size: 1.3rem; }
+  .nav__links { order: 3; width: 100%; justify-content: center; margin-left: 0; }
+  .nav__book { margin-left: auto; }
+  .hero { padding-top: 9rem; }
+  .show { grid-template-columns: auto 1fr; }
+  .show__cta { grid-column: 2; justify-self: start; }
+}
