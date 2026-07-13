@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
           ? '<span class="show__soldout">Sold out</span>'
           : s.tickets
             ? '<a class="show__tickets" href="' + s.tickets + '" target="_blank" rel="noopener">Tickets</a>'
-            : "";
+            : s.time
+              ? '<span class="show__time">' + s.time + "</span>"
+              : "";
 
         li.innerHTML =
           '<div class="show__date">' +
@@ -43,7 +45,18 @@ document.addEventListener("DOMContentLoaded", function () {
           "</div>" +
           '<div class="show__cta">' + cta + "</div>";
 
-        li.querySelector(".show__venue").textContent = s.venue;
+        // Venue links to Google Maps when an address is provided
+        var venueEl = li.querySelector(".show__venue");
+        if (s.address) {
+          var a = document.createElement("a");
+          a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(s.venue + ", " + s.address);
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = s.venue;
+          venueEl.appendChild(a);
+        } else {
+          venueEl.textContent = s.venue;
+        }
         li.querySelector(".show__city").textContent = s.city;
         list.appendChild(li);
       });

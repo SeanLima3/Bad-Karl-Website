@@ -1,23 +1,36 @@
 // ============================================================
 // Bad Karl — upcoming shows
 // Add a show as an object below. Past dates hide automatically.
-// date format: "YYYY-MM-DD"
+// date format: "YYYY-MM-DD". address is used for the Google Maps link.
+// tickets: "" means free / no tickets needed (the time shows instead).
 // ============================================================
 
 const SHOWS = [
-  // PLACEHOLDER GIGS — replace with the real ones:
   {
-    date: "2026-08-01",
-    venue: "Placeholder Tavern",
-    city: "Columbus, OH",
+    date: "2026-08-15",
+    venue: "DoG Distilling Company",
+    address: "3773 E Powell Rd, Lewis Center, OH 43035",
+    city: "Lewis Center, OH",
+    time: "6:30–8:30 PM",
     tickets: "",
     soldOut: false,
   },
   {
     date: "2026-08-22",
-    venue: "Sample Street Fair",
+    venue: "New Life — Music for a Cause",
+    address: "7070 Bent Tree Blvd, Columbus, OH 43235",
     city: "Columbus, OH",
-    tickets: "https://example.com/tickets",
+    time: "7:00–11:00 PM",
+    tickets: "",
+    soldOut: false,
+  },
+  {
+    date: "2026-09-12",
+    venue: "Standardized Brewing",
+    address: "5920 Evans Farm Dr Unit A, Lewis Center, OH 43035",
+    city: "Lewis Center, OH",
+    time: "4:30–7:15 PM",
+    tickets: "",
     soldOut: false,
   },
 ];

@@ -211,6 +211,9 @@ a { color: inherit; text-decoration: none; }
 }
 .show__tickets:hover { background: var(--teal); color: var(--cream); }
 .show__soldout { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); }
+.show__time { font-size: 0.85rem; font-weight: 600; color: var(--teal); }
+.show__venue a { border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.show__venue a:hover { color: var(--orange); border-color: var(--orange); }
 .shows__empty { color: var(--ink-soft); font-style: italic; padding: 1rem 0; }
 
 /* ---------- SONGBOOK ---------- */
