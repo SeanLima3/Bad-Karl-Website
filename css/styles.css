@@ -227,6 +227,23 @@ a { color: inherit; text-decoration: none; }
 .songbook li:nth-child(3n+2):hover { background: var(--teal-deep); color: var(--cream-lt); transform: rotate(2deg); }
 .songbook li:nth-child(3n):hover { background: var(--teal); color: var(--cream-lt); transform: rotate(-2deg); }
 
+/* ---------- MERCH ---------- */
+.merch {
+  max-width: 720px;
+  overflow: hidden;
+  border: 3px solid var(--teal-deep);
+  border-radius: 16px;
+  background: #fff;
+}
+.merch img { width: 100%; height: auto; display: block; }
+.merch__note {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--teal-deep);
+  margin-top: 1.4rem;
+  max-width: 56ch;
+}
+
 /* ---------- PHOTOS ---------- */
 .gallery {
   display: grid;

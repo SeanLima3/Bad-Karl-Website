@@ -33,4 +33,22 @@ const SHOWS = [
     tickets: "",
     soldOut: false,
   },
+  {
+    date: "2026-10-17",
+    venue: "Eldorado's Bar Food & Spirits",
+    address: "4968 N High St, Columbus, OH 43214",
+    city: "Columbus, OH",
+    time: "9:45 PM–12:30 AM",
+    tickets: "",
+    soldOut: false,
+  },
+  {
+    date: "2026-12-19",
+    venue: "Eldorado's Bar Food & Spirits",
+    address: "4968 N High St, Columbus, OH 43214",
+    city: "Columbus, OH",
+    time: "7:00–9:00 PM",
+    tickets: "",
+    soldOut: false,
+  },
 ];
