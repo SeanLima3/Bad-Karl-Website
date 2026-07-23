@@ -83,4 +83,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Clean up a leftover #hash from an older visit
   if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+
+  // Photo lightbox: click a gallery photo to view it full-size,
+  // arrows or ←/→ keys to move between photos, X or Esc to close.
+  var lb = document.getElementById("lightbox");
+  if (lb) {
+    var lbImg = lb.querySelector(".lightbox__img");
+    var galleryImgs = Array.prototype.slice.call(document.querySelectorAll(".gallery img"));
+    var current = 0;
+
+    function showAt(i) {
+      current = (i + galleryImgs.length) % galleryImgs.length;
+      lbImg.src = galleryImgs[current].src;
+      lbImg.alt = galleryImgs[current].alt;
+    }
+    function openLightbox(i) {
+      showAt(i);
+      lb.hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+    function closeLightbox() {
+      lb.hidden = true;
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    galleryImgs.forEach(function (img, i) {
+      img.addEventListener("click", function () { openLightbox(i); });
+    });
+    lb.querySelector(".lightbox__close").addEventListener("click", closeLightbox);
+    lb.querySelector(".lightbox__prev").addEventListener("click", function (e) {
+      e.stopPropagation(); showAt(current - 1);
+    });
+    lb.querySelector(".lightbox__next").addEventListener("click", function (e) {
+      e.stopPropagation(); showAt(current + 1);
+    });
+    // Click the dark backdrop (but not the image) to close
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb) closeLightbox();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (lb.hidden) return;
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") showAt(current - 1);
+      else if (e.key === "ArrowRight") showAt(current + 1);
+    });
+  }
 });

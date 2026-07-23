@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <!-- Bump ?v= whenever styles/scripts change so visitors never see stale versions -->
-  <link rel="stylesheet" href="css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css?v=8" />
 </head>
 <body>
   <!-- ===================== NAV ===================== -->
@@ -28,11 +28,10 @@
     <nav class="nav__links">
       <a href="#about">About</a>
       <a href="#shows">Shows</a>
-      <a href="#songbook">Songbook</a>
       <a href="#merch">Merch</a>
       <a href="#photos">Photos</a>
     </nav>
-    <a href="#book" class="nav__book">Book us</a>
+    <a href="mailto:Badkarlmusic@gmail.com" class="nav__book">Book us</a>
   </header>
 
   <!-- ===================== HERO ===================== -->
@@ -42,7 +41,7 @@
       <p class="hero__eyebrow">Funk &amp; soul covers</p>
       <h1 class="hero__title">Bad Karl</h1>
       <div class="hero__cta">
-        <a href="#book" class="btn btn--primary">Book us</a>
+        <a href="mailto:Badkarlmusic@gmail.com" class="btn btn--primary">Book us</a>
         <a href="#shows" class="btn btn--ghost">Upcoming shows</a>
         <a href="https://www.instagram.com/badkarl/" class="btn btn--ghost" target="_blank" rel="noopener">Instagram</a>
       </div>
@@ -53,12 +52,22 @@
   <section id="about" class="section">
     <div class="section__inner">
       <h2 class="section__title">About</h2>
-      <p class="about__text">
-        Bad Karl is a local 8-piece funk and soul band out of Columbus, Ohio, featuring
-        high energy rhythmic songs from the 60s through today. Inspired by the timeless
-        grooves of James Brown to Stevie Wonder and Sly &amp; Family Stone, Bad Karl thrives
-        on unique arrangements and expanded improvisation.
-      </p>
+      <div class="about">
+        <div class="about__body">
+          <p class="about__text">
+            Bad Karl is a local 8-piece funk and soul band out of Columbus, Ohio, featuring
+            high energy rhythmic songs from the 60s through today. Inspired by the timeless
+            grooves of James Brown to Stevie Wonder and Sly &amp; Family Stone, Bad Karl thrives
+            on unique arrangements and expanded improvisation.
+          </p>
+          <p class="about__text">
+            You'll hear Stevie Wonder, James Brown, Bruno Mars, and much more.
+          </p>
+        </div>
+        <figure class="about__photo">
+          <img src="images/photo-2.jpg" alt="The Bad Karl crew after a bar gig" loading="lazy" />
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -74,26 +83,8 @@
     </div>
   </section>
 
-  <!-- ===================== SONGBOOK ===================== -->
-  <section id="songbook" class="section">
-    <div class="section__inner">
-      <h2 class="section__title">The songbook</h2>
-      <p class="section__lead">A taste of who we cover.</p>
-
-      <ul class="songbook">
-        <li>Stevie Wonder</li>
-        <li>Bruno Mars</li>
-        <li>James Brown</li>
-        <li>Commodores</li>
-        <li>Vulfpeck</li>
-        <li>Sly and the Family Stone</li>
-      </ul>
-      <p class="section__note">…and more. Ask for the full setlist when you book.</p>
-    </div>
-  </section>
-
   <!-- ===================== MERCH ===================== -->
-  <section id="merch" class="section section--alt">
+  <section id="merch" class="section">
     <div class="section__inner">
       <h2 class="section__title">Merch</h2>
       <p class="section__lead">Rep the band.</p>
@@ -106,7 +97,7 @@
   </section>
 
   <!-- ===================== PHOTOS ===================== -->
-  <section id="photos" class="section">
+  <section id="photos" class="section section--alt">
     <div class="section__inner">
       <h2 class="section__title">Photos</h2>
       <p class="section__lead">On stage and in the studio.</p>
@@ -134,7 +125,15 @@
     <p>&copy; <span id="year"></span> Bad Karl. Stay funky.</p>
   </footer>
 
-  <script src="js/shows.js?v=7"></script>
-  <script src="js/main.js?v=7"></script>
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox__close" type="button" aria-label="Close photo viewer">&times;</button>
+    <button class="lightbox__nav lightbox__prev" type="button" aria-label="Previous photo">&#8249;</button>
+    <img class="lightbox__img" src="" alt="" />
+    <button class="lightbox__nav lightbox__next" type="button" aria-label="Next photo">&#8250;</button>
+  </div>
+
+  <script src="js/shows.js?v=8"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>
