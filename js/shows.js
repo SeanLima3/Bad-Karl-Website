@@ -7,6 +7,15 @@
 
 const SHOWS = [
   {
+    date: "2026-08-14",
+    venue: "Natalie's Grandview",
+    address: "945 King Ave, Columbus, OH 43212",
+    city: "Columbus, OH",
+    time: "5:15–7:00 PM",
+    tickets: "",
+    soldOut: false,
+  },
+  {
     date: "2026-08-15",
     venue: "DoG Distilling Company",
     address: "3773 E Powell Rd, Lewis Center, OH 43035",
