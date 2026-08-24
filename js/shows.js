@@ -43,6 +43,15 @@ const SHOWS = [
     soldOut: false,
   },
   {
+    date: "2026-10-16",
+    venue: "DoG Distilling Company",
+    address: "3773 E Powell Rd, Lewis Center, OH 43035",
+    city: "Lewis Center, OH",
+    time: "7:00–9:00 PM",
+    tickets: "",
+    soldOut: false,
+  },
+  {
     date: "2026-10-17",
     venue: "Eldorado's Bar Food & Spirits",
     address: "4968 N High St, Columbus, OH 43214",
